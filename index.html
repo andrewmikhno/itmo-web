@@ -5,95 +5,89 @@
     <meta name="author" content="Andrew Mikhno">
     <meta name="description" content="Floristería inusual de Madrid">
     <meta name="keywords" content="ramos,Madrid,tienda,presente,regalo">
-    <style>
-      li {
-        list-style-type: none;
-      }
-      ul {
-        padding-left: 0;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css">
     <title>Deliciosos Ramos</title>
   </head>
   <body>
-    <header>
-      <h2>Deliciosos Ramos</h2>
-      <nav>
-        <ul>
-          <li><p>Inicio</p></li>
-          <li><p>Sobre Nosotras</p></li>
-          <li><p>Tienda</p></li>
-          <li><p>Cesta</p></li>
-        </ul>
-      </nav>
-    </header>
+  <header class="header">
+    <h2 class="header__title">Deliciosos Ramos</h2>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><p class="nav__link">Inicio</p></li>
+        <li class="nav__item"><p class="nav__link">Sobre Nosotras</p></li>
+        <li class="nav__item"><p class="nav__link">Tienda</p></li>
+        <li class="nav__item"><p class="nav__link">Cesta</p></li>
+      </ul>
+    </nav>
+  </header>
   <main>
-    <section>
-      <aside>
-      <ul>
-        <li><p>Producto 1</p></li>
-        <li><p>Producto 2</p></li>
-        <li><p>Producto 3</p></li>
-        <li><p>Producto 4</p></li>
-        <li><p>Producto 5</p></li>
-        <li><p>Producto 6</p></li>
-        <li><p>Producto 7</p></li>
-        <li><p>Producto 8</p></li>
-        <li><p>Producto 9</p></li>
-        <li><p>Producto 10</p></li>
-        <li><p>Producto 11</p></li>
-        <li><p>Producto 12</p></li>
+    <section class="content">
+      <aside class="products">
+        <ul class="product-list">
+          <li class="product-item">
+            <img class="product-item__image" src="images/Caja_de_chocolatinas.jpg" alt="Caja de chocolatinas">
+            <p>Caja de chocolatinas</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Cesta-_Dulce-Sinfonía_.jpg" alt="Cesta Dulce-Sinfonía">
+            <p class="product-item__name"> Cesta Dulce-Sinfonía</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Cesta-“Romántica”.jpg" alt="Cesta “Romántica”">
+            <p>Cesta “Romántica”</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Cesta_Chocolatinas_con_té.jpg" alt="Cesta Chocolatinas con té">
+            <p>Cesta Chocolatinas con té</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Cesta_Delicia_de_Bayas.jpg" alt="Cesta Delicia de Bayas">
+            <p>Cesta Delicia de Bayas</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Cesta_Desayuno_para_10.jpg" alt="Cesta Desayuno para 10">
+            <p>Cesta Desayuno para 10</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Otoño-Mix.jpg" alt="Otoño Mix">
+            <p>Otoño-Mix</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Ramo-“Flor”con-queso-y-fuet.jpg" alt="Ramo “Flor” con queso y fuet">
+            <p>Ramo “Flor” con queso y fuet</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Ramo-_Chocolate-y-fuet_.jpg" alt="Ramo Chocolate y fuet">
+            <p>Ramo Chocolate y fuet</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Ramo-_Donuts_.jpg" alt="Ramo Donuts">
+            <p>Ramo Donuts</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Ramo-_fuet-y-nueces_.jpg" alt="Ramo fuet y nueces">
+            <p>Ramo fuet y nueces</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
+          <li class="product-item">
+            <img class="product-item__image" src="images/Ramo-_Jámon-y-Vino_.jpg" alt="Ramo Jámon y Vino">
+            <p>Ramo Jámon y Vino</p>
+            <span class="product-item__price">€49.99</span>
+          </li>
       </ul>
       </aside>
     </section>
-    <pre>___________________________________________¶¶
-___________________________________________¶_¶_¶¶
-________________________________________¶¶¶¶_¶¶__¶
-___________________________________¶¶¶_¶__¶¶___¶¶
-__________________________________¶___¶____¶¶¶¶¶¶¶
-___________________________________¶_________¶
-__________________________________¶_______¶¶¶
-___________________________________¶¶¶¶___¶
-____________________________________¶__¶¶¶
-__________________________________¶____¶
-________________¶¶¶_______¶¶¶¶¶¶¶¶¶¶__¶
-_____________¶¶¶___¶__¶¶¶¶___________¶¶¶¶¶
-____________¶______¶¶¶__________¶¶¶¶¶_____¶¶¶
-___________¶___________¶¶¶¶¶¶¶¶¶_____¶¶¶_____¶
-___________¶¶¶¶¶¶________¶¶¶¶¶¶¶¶_______¶¶____¶¶
-______________¶¶¶___¶¶¶_¶======¶¶__¶¶¶¶¶_¶¶¶___¶
-_____________¶¶____¶¶¶_¶¶_______¶¶¶¶====¶___¶¶__¶
-_____________¶________¶¶____0____¶¶_______¶____¶¶¶¶¶¶¶
-____________¶¶________¶____000___¶¶__000___¶¶¶________¶
-____________¶_________¶____00___¶_¶_000____¶¶_________¶
-___________¶¶¶_________¶_____¶¶¶¶¶¶__00___¶_¶_____¶¶__¶
-___________¶_¶¶¶¶¶______¶¶¶¶¶____¶¶¶______¶________¶¶_¶
-___________¶______¶________¶_¶_____¶¶¶¶¶¶¶_________¶_¶
-__¶¶_______¶______¶________¶_¶___¶__¶______________¶
-__¶¶¶¶¶¶¶¶¶¶¶____¶_________¶____¶___¶______________¶
-_¶¶¶¶¶______¶___¶___________¶¶___¶¶¶__¶¶¶¶¶¶¶_¶¶¶¶¶
-¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶______¶_______¶¶¶____¶_______¶____¶
-______________¶_________¶¶¶¶¶¶¶_____¶______¶¶¶___¶
-_______________¶______________¶¶¶¶¶_¶_____¶__¶__¶
-________________¶¶___________________¶____¶__¶_¶
-__________________¶¶__________________¶__¶___¶¶
-____________________¶¶_________________¶_¶___¶
-______________________¶¶¶¶¶¶________¶¶¶¶¶¶___¶
-_______________________¶___¶¶¶¶¶¶¶¶¶____¶¶¶¶¶
-_______________________¶___¶__¶___¶____¶¶¶¶¶¶
-_______________________¶____¶_¶___¶____¶¶_¶¶
-_______________________¶____¶_¶___¶
-_______________________¶¶¶¶¶¶_¶¶¶¶¶
-_______________________¶¶¶¶¶¶_¶¶¶¶¶
-________________________¶¶_¶¶_¶_¶¶
-    </pre>
-    <pre>
-      <code>
-      if (a > b) { // Игзампл оф коде ин
-      console.log('Hello!'); // ДжаваСкрипт лангуаге
-      }
-      </code>
-    </pre>
   </main>
   <footer>
     <article>Regalos Comestibles</article>
