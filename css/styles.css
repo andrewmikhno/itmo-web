@@ -10,6 +10,7 @@ main {
     min-height: 1000px;
 }
 
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -90,6 +91,7 @@ main {
     color: #fff;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+
 }
 
 .content {
@@ -132,6 +134,37 @@ main {
     font-weight: bold;
     color: #FF6347;
     font-size: 1.2em;
+}
+.delivery-table {
+    margin-top: 20px;
+}
+
+.delivery-table__title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.delivery-table__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.delivery-table__cell {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.delivery-table__row {
+    background-color: antiquewhite;
+    font-weight: bold;
+}
+
+.delivery-table__row-even {
+    background-color: antiquewhite;
 }
 
 .empty-cart-message {
@@ -325,7 +358,6 @@ h2, h3 {
     .delivery-table {
         display: none;
     }
-}
 
 @font-face {
     font-family: 'Dancing Script';
