@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Andrew Mikhno">
+    <meta name="description" content="Floristería inusual de Madrid">
+    <meta name="keywords" content="ramos,Madrid,tienda,presente,regalo">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/performance.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Deliciosos Ramos</title>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="header__logo col-6">
+            <h2 class="header__title">Deliciosos Ramos</h2>
+        </div>
+        <nav class="nav col-6">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">Sobre Nosotras</a></li>
+                <li class="nav__item"><a class="nav__link" href="shop.html">Tienda</a></li>
+                <li class="nav__item"><a class="nav__link" href="cart.html">Cesta</a></li>
+                <li class="nav__item nav__item--profile"><a href="profile.html" class="nav__link"><img src="images/profile_icon.png" alt="User Icon" class="profile-icon"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h3>Perfil del Comprador</h3>
+
+        <form id="profileForm" class="profile-form">
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="firstName" name="firstName" class="input-field" required>
+
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="lastName" class="input-field" required>
+
+            <label for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" class="input-field" required>
+
+            <label for="address">Dirección:</label>
+            <input type="text" id="address" name="address" class="input-field" required>
+
+            <label for="phoneNumber">Número de Teléfono:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" class="input-field" required>
+
+            <button type="submit" class="submit-button">Guardar y Generar</button>
+            <div id="resultsContainer" class="results-container"></div>
+            <p id="successMessage" class="success-message">Success</p>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="footer__content col-12">
+            <article class="footer__article">Regalos Comestibles</article>
+            <div class="footer__links">
+                <h3 class="footer__link"><b><a href="#">entrega</a></b></h3>
+                <h3 class="footer__link"><b><a href="#">100% efectos de WOW</a></b></h3>
+                <h3 class="footer__link"><b><a href="#">seguro de calidad</a></b></h3>
+                <h3 class="footer__link"><b><a href="#">asesoramiento</a></b></h3>
+            </div>
+            <div class="footer__performance">
+                <p class="performance"></p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/activepage.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
