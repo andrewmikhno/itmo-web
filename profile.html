@@ -27,7 +27,7 @@
         </nav>
     </header>
     <main>
-        <h3>Perfil del Comprador</h3>
+        <h3 class="profile-form__title">Perfil del Comprador</h3>
 
         <form id="profileForm" class="profile-form">
             <label for="firstName">Nombre:</label>
@@ -36,19 +36,34 @@
             <label for="lastName">Apellido:</label>
             <input type="text" id="lastName" name="lastName" class="input-field" required>
 
-            <label for="city">Ciudad:</label>
-            <input type="text" id="city" name="city" class="input-field" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="input-field" required>
 
             <label for="address">Dirección:</label>
             <input type="text" id="address" name="address" class="input-field" required>
 
+            <label for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" class="input-field" required>
+
             <label for="phoneNumber">Número de Teléfono:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" class="input-field" required>
 
-            <button type="submit" class="submit-button">Guardar y Generar</button>
-            <div id="resultsContainer" class="results-container"></div>
+            <label for="website">Sitio web:</label>
+            <input type="text" id="website" name="website" class="input-field" required>
+
+            <label for="company">Compañía:</label>
+            <input type="text" id="company" name="company" class="input-field" required>
+
+            <label for="companyCatchPhrase">Eslogan de la Compañía:</label>
+            <input type="text" id="companyCatchPhrase" name="companyCatchPhrase" class="input-field" required>
             <p id="successMessage" class="success-message">Success</p>
+            <button type="submit" class="submit-button">Guardar y Generar</button>
+            <button id="fetchDataButton" class="fetch-button">Cargar datos</button>
+            <div id="resultsContainer" class="results-container"></div>
+            <div id="preloader" class="preloader"></div>
+            <div id="errorMessage" class="error-message">⚠ Something went wrong. Try again.</div>
         </form>
+
     </main>
     <footer class="footer">
         <div class="footer__content col-12">
@@ -67,5 +82,6 @@
 </div>
 <script src="js/activepage.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/userProfile.js"></script>
 </body>
 </html>
