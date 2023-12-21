@@ -1,5 +1,3 @@
-// profile.js
-
 document.addEventListener('DOMContentLoaded', function () {
     var profileForm = document.getElementById('profileForm');
     var resultsContainer = document.getElementById('resultsContainer');
@@ -21,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         appendResultItem(resultsList, 'Ciudad:', city);
         appendResultItem(resultsList, 'Dirección:', address);
         appendResultItem(resultsList, 'Número de Teléfono:', phoneNumber);
-
-        resultsContainer.innerHTML = '';
 
         resultsContainer.appendChild(resultsList);
 
@@ -56,5 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('city').value = storedProfileData.city;
         document.getElementById('address').value = storedProfileData.address;
         document.getElementById('phoneNumber').value = storedProfileData.phoneNumber;
+
+        var resultsList = document.createElement('ul');
+        resultsList.classList.add('results-list');
+        appendResultItem(resultsList, 'Nombre:', `${storedProfileData.firstName} ${storedProfileData.lastName}`);
+        appendResultItem(resultsList, 'Ciudad:', storedProfileData.city);
+        appendResultItem(resultsList, 'Dirección:', storedProfileData.address);
+        appendResultItem(resultsList, 'Número de Teléfono:', storedProfileData.phoneNumber);
+        resultsContainer.appendChild(resultsList);
     }
 });
