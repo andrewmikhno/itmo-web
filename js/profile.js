@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
         var address = document.getElementById('address').value;
         var phoneNumber = document.getElementById('phoneNumber').value;
 
+        var storedData = loadStoredData();
+
+        var newData = {
+            firstName: firstName,
+            lastName: lastName,
+            city: city,
+            address: address,
+            phoneNumber: phoneNumber
+        };
+
+        storedData.push(newData);
+
+        saveToLocalStorage(storedData);
+
         var resultsList = document.createElement('ul');
         resultsList.classList.add('results-list');
 
@@ -23,14 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         resultsContainer.appendChild(resultsList);
 
         successMessage.style.display = 'block';
-
-        saveToLocalStorage({
-            firstName: firstName,
-            lastName: lastName,
-            city: city,
-            address: address,
-            phoneNumber: phoneNumber
-        });
     });
 
     function appendResultItem(list, label, value) {
@@ -40,25 +46,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function saveToLocalStorage(data) {
-        localStorage.setItem('profileData', JSON.stringify(data));
+        // Сохраняем каждую запись отдельно
+        data.forEach(function(entry, index) {
+            localStorage.setItem('profileData_' + index, JSON.stringify(entry));
+        });
     }
 
-    var storedProfileData = localStorage.getItem('profileData');
-    if (storedProfileData) {
-        storedProfileData = JSON.parse(storedProfileData);
+    function loadStoredData() {
+        var storedData = [];
+        var index = 0;
 
-        document.getElementById('firstName').value = storedProfileData.firstName;
-        document.getElementById('lastName').value = storedProfileData.lastName;
-        document.getElementById('city').value = storedProfileData.city;
-        document.getElementById('address').value = storedProfileData.address;
-        document.getElementById('phoneNumber').value = storedProfileData.phoneNumber;
+        while (true) {
+            var entry = localStorage.getItem('profileData_' + index);
+            if (entry === null) {
+                break;
+            }
+            storedData.push(JSON.parse(entry));
+            index++;
+        }
 
-        var resultsList = document.createElement('ul');
-        resultsList.classList.add('results-list');
-        appendResultItem(resultsList, 'Nombre:', `${storedProfileData.firstName} ${storedProfileData.lastName}`);
-        appendResultItem(resultsList, 'Ciudad:', storedProfileData.city);
-        appendResultItem(resultsList, 'Dirección:', storedProfileData.address);
-        appendResultItem(resultsList, 'Número de Teléfono:', storedProfileData.phoneNumber);
-        resultsContainer.appendChild(resultsList);
+        return storedData;
     }
 });
