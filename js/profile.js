@@ -1,4 +1,6 @@
+
 //profile.js
+
 document.addEventListener('DOMContentLoaded', function () {
     var profileForm = document.getElementById('profileForm');
     var successMessage = document.getElementById('successMessage');
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     profileForm.addEventListener('submit', function (event) {
         event.preventDefault();
+
 
         var formData = {
             name: document.getElementById('firstName').value,
@@ -27,8 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function saveToLocalStorage(data) {
-        localStorage.setItem('profileData', JSON.stringify(data));
+        // Сохраняем каждую запись отдельно
+        data.forEach(function(entry, index) {
+            localStorage.setItem('profileData_' + index, JSON.stringify(entry));
+        });
     }
+
 
     function restoreFormData(data) {
         document.getElementById('firstName').value = data.name || '';
@@ -40,5 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('website').value = data.website || '';
         document.getElementById('company').value = data.company || '';
         document.getElementById('companyCatchPhrase').value = data.companyCatchPhrase || '';
+
     }
 });
