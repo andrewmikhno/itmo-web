@@ -1,49 +1,33 @@
+
+//profile.js
+
 document.addEventListener('DOMContentLoaded', function () {
     var profileForm = document.getElementById('profileForm');
-    var resultsContainer = document.getElementById('resultsContainer');
     var successMessage = document.getElementById('successMessage');
+
+    var savedFormData = JSON.parse(localStorage.getItem('profileData')) || {};
+    restoreFormData(savedFormData);
 
     profileForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        var firstName = document.getElementById('firstName').value;
-        var lastName = document.getElementById('lastName').value;
-        var city = document.getElementById('city').value;
-        var address = document.getElementById('address').value;
-        var phoneNumber = document.getElementById('phoneNumber').value;
 
-        var storedData = loadStoredData();
-
-        var newData = {
-            firstName: firstName,
-            lastName: lastName,
-            city: city,
-            address: address,
-            phoneNumber: phoneNumber
+        var formData = {
+            name: document.getElementById('firstName').value,
+            surname: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            phone: document.getElementById('phoneNumber').value,
+            website: document.getElementById('website').value,
+            company: document.getElementById('company').value,
+            companyCatchPhrase: document.getElementById('companyCatchPhrase').value
         };
 
-        storedData.push(newData);
-
-        saveToLocalStorage(storedData);
-
-        var resultsList = document.createElement('ul');
-        resultsList.classList.add('results-list');
-
-        appendResultItem(resultsList, 'Nombre:', `${firstName} ${lastName}`);
-        appendResultItem(resultsList, 'Ciudad:', city);
-        appendResultItem(resultsList, 'Dirección:', address);
-        appendResultItem(resultsList, 'Número de Teléfono:', phoneNumber);
-
-        resultsContainer.appendChild(resultsList);
+        saveToLocalStorage(formData);
 
         successMessage.style.display = 'block';
     });
-
-    function appendResultItem(list, label, value) {
-        var listItem = document.createElement('li');
-        listItem.innerHTML = `<strong>${label}</strong> ${value}`;
-        list.appendChild(listItem);
-    }
 
     function saveToLocalStorage(data) {
         // Сохраняем каждую запись отдельно
@@ -52,19 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function loadStoredData() {
-        var storedData = [];
-        var index = 0;
 
-        while (true) {
-            var entry = localStorage.getItem('profileData_' + index);
-            if (entry === null) {
-                break;
-            }
-            storedData.push(JSON.parse(entry));
-            index++;
-        }
+    function restoreFormData(data) {
+        document.getElementById('firstName').value = data.name || '';
+        document.getElementById('lastName').value = data.surname || '';
+        document.getElementById('email').value = data.email || '';
+        document.getElementById('address').value = data.address || '';
+        document.getElementById('city').value = data.city || '';
+        document.getElementById('phoneNumber').value = data.phone || '';
+        document.getElementById('website').value = data.website || '';
+        document.getElementById('company').value = data.company || '';
+        document.getElementById('companyCatchPhrase').value = data.companyCatchPhrase || '';
 
-        return storedData;
     }
 });
